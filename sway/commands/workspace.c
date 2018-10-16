@@ -152,7 +152,9 @@ struct cmd_results *cmd_workspace(int argc, char **argv) {
 			}
 			free(name);
 		}
-		workspace_switch(ws, no_auto_back_and_forth);
+		if(!(ws == NULL)) {
+			workspace_switch(ws, no_auto_back_and_forth);
+		}
 	}
 	return cmd_results_new(CMD_SUCCESS, NULL, NULL);
 }
